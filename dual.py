@@ -1,0 +1,22 @@
+from gpiozero import Robot
+from time import sleep
+robotfront = Robot(left=(4, 14), right=(17, 18))
+robotback = Robot(left=(22, 23), right=(24, 25))
+
+robotfront.forward(speed=0.5)
+robotback.forward(speed=0.5)
+print (" Going Forward")
+sleep(5)
+robotfront.right()
+print(" Turning Right")
+sleep(2)
+robotfront.forward(speed=1.0)
+print (" Going Forward front wheels only")
+sleep(5)
+robotback.forward(speed=1.0)
+print (" Going Forward back wheels only")
+robotfront.left(speed=0.75)
+robotfront.reverse()
+print (" Going Backwards front wheels only")
+robotfront.stop()
+robotback.stop()
